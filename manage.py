@@ -6,7 +6,7 @@ from settings.conf import ENV_ID, ENV_POSSIBLE_OPTIONS
 
 
 def main():
-    """Run administrative tasks."""
+    """Run administrative tasks.""" 
     assert ENV_ID in ENV_POSSIBLE_OPTIONS, f"Set correct DJANGORLAR_ENV_ID env var. Possible options: {ENV_POSSIBLE_OPTIONS}"
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', f'settings.env.{ENV_ID}')
     try:
