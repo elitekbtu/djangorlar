@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Count</title>
+</head>
+<body>
+    <button id="inc">Click me</button>
+    <button id="reset">Reset</button>
+
+    <h2 id="cnt">Clicks count: {{ count }}</h2>
+
+<script>
+    const cnt = document.getElementById("cnt");
+
+    document.getElementById("inc").addEventListener("click", () => {
+        fetch("/count/", { method: "POST" })
+            .then(res => res.text())
+            .then(data => { cnt.textContent = "Clicks count: " + data; });
+    });
+
+    document.getElementById("reset").addEventListener("click", () => {
+        fetch("/count/", { method: "DELETE" })
+            .then(res => res.text())
+            .then(data => { cnt.textContent = "Clicks count: " + data; });
+    });
+</script>
+</body>
+</html>

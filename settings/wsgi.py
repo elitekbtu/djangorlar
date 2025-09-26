@@ -1,7 +1,7 @@
-#Project modules
+# Python modules
 import os
 
-#Django modules
+# Django modules
 from django.core.wsgi import get_wsgi_application
 
 # Project modules
